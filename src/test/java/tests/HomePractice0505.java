@@ -30,6 +30,10 @@ public class HomePractice0505 {
             throw new RuntimeException(e);
         }
         driver.navigate().refresh();
+        if(driver.getTitle().equals("Hello, youtube")){
+            System.out.println("Title test failed");
+        }
+        else System.out.println("Title test passed");
         driver.quit();
 
     }
