@@ -34,6 +34,13 @@ public class HomePractice0505 {
             System.out.println("Title test failed");
         }
         else System.out.println("Title test passed");
+
+        System.out.println(driver.getWindowHandle());
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         driver.quit();
 
     }
