@@ -5,11 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.List;
 
-public class Ebay {
+public class EbayEnterSandman {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();
