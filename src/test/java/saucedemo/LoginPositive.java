@@ -101,6 +101,8 @@ public class LoginPositive {
         else
             System.out.println("Purchase was failed");
 
+        driver.quit();
+
 
 
     }
