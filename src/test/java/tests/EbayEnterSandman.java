@@ -16,14 +16,14 @@ public class EbayEnterSandman {
 
         driver.manage().window().maximize();
 
-        WebElement searchBar = driver.findElement(By.xpath("//input[@aria-label='Search for anything']"));
+        WebElement searchBar = driver.findElement(By.id("gh-ac"));
         searchBar.click();
         searchBar.sendKeys("vintage metallica enter sandman shirt");
 
-        List<WebElement> dropdwn = driver.findElements(By.xpath("//select[@aria-label='Select a category for search']//option"));
-        System.out.println(dropdwn.size());
+        List<WebElement> dropdown = driver.findElements(By.id("gh-cat"));
+        System.out.println(dropdown.size());
 
-        for(WebElement webElement:dropdwn){
+        for(WebElement webElement:dropdown){
             if (webElement.getText().equals("Clothing, Shoes & Accessories")){
                 webElement.click();
                 break;
