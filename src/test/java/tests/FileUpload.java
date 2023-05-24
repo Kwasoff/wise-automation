@@ -14,7 +14,7 @@ public class FileUpload {
 
 
         WebElement uplArea = driver.findElement(By.id("file-upload"));
-        uplArea.sendKeys("C:\\Users\\iharz\\Desktop\\Screenshot 2022-04-02 131315.png");
+        uplArea.sendKeys("C:\\Users\\iharz\\Desktop\\practice.Screenshot 2022-04-02 131315.png");
 
         WebElement fileSubmitButton = driver.findElement(By.id("file-submit"));
         fileSubmitButton.click();

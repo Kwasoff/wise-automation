@@ -1,3 +1,5 @@
+package practice;
+
 import org.checkerframework.checker.units.qual.K;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
