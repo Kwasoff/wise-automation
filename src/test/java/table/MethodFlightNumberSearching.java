@@ -18,8 +18,10 @@ public class MethodFlightNumberSearching {
         driver.get("https://blazedemo.com/reserve.php");
 
         for (WebElement flights : flightNumbers(200, 500)){
-            System.out.println(flights.getText());
+            flightInfo(flights.getText());
         }
+
+
 
     }
 
@@ -47,5 +49,53 @@ public class MethodFlightNumberSearching {
 
     return flights;
     }
+
+
+    public static void flightInfo (String flightNumber){
+
+        List<WebElement> flightNumbers = driver.findElements(By.xpath("//tbody//td[2]"));
+        List<WebElement> flights = new ArrayList<>();
+        for (int i = 0; i < flightNumbers.size(); i++) {
+            flightNumbers = driver.findElements(By.xpath("//tbody//td[2]"));
+            String flNum = flightNumbers.get(i).getText();
+
+            if (flightNumber.equals(flNum)){
+                List <WebElement> airLine = driver.findElements(By.xpath("//tbody/tr/td[3]"));
+                List <WebElement> depTime = driver.findElements(By.xpath("//tbody/tr/td[4]"));
+                List <WebElement> arrival = driver.findElements(By.xpath("//tbody/tr/td[5]"));
+                List <WebElement> price = driver.findElements(By.xpath("//tbody/tr/td[6]"));
+
+                System.out.println("\nFlight info for flight number: " + flightNumber);
+                System.out.println("AirLine: %" + airLine.get(i).getText());
+                System.out.println("Departure time: %" + depTime.get(i).getText());
+                System.out.println("Arrival time: %" + arrival.get(i).getText());
+                System.out.println("Price: %" + price.get(i).getText());
+            }
+
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
