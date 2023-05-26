@@ -54,7 +54,7 @@ public class MethodFlightNumberSearching {
     public static void flightInfo (String flightNumber){
 
         List<WebElement> flightNumbers = driver.findElements(By.xpath("//tbody//td[2]"));
-        List<WebElement> flights = new ArrayList<>();
+
         for (int i = 0; i < flightNumbers.size(); i++) {
             flightNumbers = driver.findElements(By.xpath("//tbody//td[2]"));
             String flNum = flightNumbers.get(i).getText();
