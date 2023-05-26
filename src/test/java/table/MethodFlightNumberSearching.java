@@ -66,10 +66,10 @@ public class MethodFlightNumberSearching {
                 List <WebElement> price = driver.findElements(By.xpath("//tbody/tr/td[6]"));
 
                 System.out.println("\nFlight info for flight number: " + flightNumber);
-                System.out.println("AirLine: %" + airLine.get(i).getText());
-                System.out.println("Departure time: %" + depTime.get(i).getText());
-                System.out.println("Arrival time: %" + arrival.get(i).getText());
-                System.out.println("Price: %" + price.get(i).getText());
+                System.out.println("AirLine: " + airLine.get(i).getText());
+                System.out.println("Departure time: " + depTime.get(i).getText());
+                System.out.println("Arrival time: " + arrival.get(i).getText());
+                System.out.println("Price: " + price.get(i).getText());
             }
 
 
