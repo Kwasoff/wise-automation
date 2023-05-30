@@ -25,6 +25,7 @@ public class Screen {
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://instagram.com");
 
+
         Set<String> handles = driver.getWindowHandles();
         for (String id : handles){
             driver.switchTo().window(id);
