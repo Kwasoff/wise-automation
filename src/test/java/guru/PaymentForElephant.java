@@ -1,9 +1,6 @@
 package guru;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -11,6 +8,16 @@ import utilities.Config;
 import utilities.Driver;
 
 public class PaymentForElephant {
+
+    @BeforeClass
+    public static void classBefore(){
+        System.out.println("One time in the beginning");
+    }
+
+    @AfterClass
+    public  static void classAfter(){
+        System.out.println("One time in the end");
+    }
 
     @Before
     public void testSetupBefore(){
