@@ -25,7 +25,7 @@ public class AgileProject {
         Driver.getDriver().findElement(By.name("btnLogin")).click();
         ApplicationFlow.pause(500);
         String expect = "https://demo.guru99.com/Agile_Project/Agi_V1/customer/Customerhomepage.php";
-        Assert.assertEquals(expect,Driver.getDriver().getCurrentUrl());
+        Assert.assertEquals("Login functionality failed",expect,Driver.getDriver().getCurrentUrl());
 
            }
 
