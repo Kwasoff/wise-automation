@@ -4,16 +4,14 @@ import com.github.javafaker.Faker;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import utilities.Config;
 import utilities.Driver;
 
 import java.util.List;
 
-public class JUnitAssertions {
+public class JUnitAssertionsTickets {
 
     @Test
     public void playingAround(){
