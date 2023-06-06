@@ -1,12 +1,11 @@
 package guru;
 
-import com.github.javafaker.Faker;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import pages.AgileProjectPage;
 import pages.GuruHomePage;
 import utilities.ApplicationFlow;
 import utilities.Config;
@@ -15,7 +14,7 @@ import utilities.Driver;
 public class AgileProject {
 
     GuruHomePage guruHomePage = new GuruHomePage();
-    AgileProjectHomePage agileProjectHomePage = new AgileProjectHomePage();
+    AgileProjectPage agileProjectPage = new AgileProjectPage();
 
     @Test
     public void login(){
@@ -59,15 +58,29 @@ public class AgileProject {
         Driver.getDriver().get(Config.getValue("guruURL"));
 
                guruHomePage.agileProjectLink.click();
-               String userId = agileProjectHomePage.userIdAccess.getText().substring(9);
-               String password = agileProjectHomePage.userPasswordAccess.getText().substring(11);
-               agileProjectHomePage.userID.sendKeys(userId);
-               agileProjectHomePage.password.sendKeys(password);
-               agileProjectHomePage.loginBtn.click();
+               String userId = agileProjectPage.userIdAccess.getText().substring(9);
+               String password = agileProjectPage.userPasswordAccess.getText().substring(11);
+               agileProjectPage.userID.sendKeys(userId);
+               agileProjectPage.password.sendKeys(password);
+               agileProjectPage.loginBtn.click();
                ApplicationFlow.pause(500);
                String expectedUrl = "https://demo.guru99.com/Agile_Project/Agi_V1/customer/Customerhomepage.php" ;
                Assert.assertEquals("URL failed", expectedUrl, Driver.getDriver().getCurrentUrl());
 
+           }
+
+           @Test
+           public void logoutPom(){
+        Driver.getDriver().get(Config.getValue("guruURL"));
+        guruHomePage.agileProjectLink.click();
+               String userId = agileProjectPage.userIdAccess.getText().substring(9);
+               String password = agileProjectPage.userPasswordAccess.getText().substring(11);
+               agileProjectPage.login(userId,password);
+               agileProjectPage.logoutButton.click();
+               Alert alert = Driver.getDriver().switchTo().alert();
+               String expectedMessage = "You Have Succesfully Logged Out!!";
+               Assert.assertEquals("Alert message failed", expectedMessage, alert.getText());
+                alert.accept();
            }
 
     @After
